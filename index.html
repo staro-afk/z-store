@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Z-Store — toko demo untuk latihan keamanan aplikasi web.">
+  <title>Z-Store — Demo Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline">Z-STORE SECURITY LAB <span>DEMO • NO REAL PAYMENTS</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Z-Store home"><span class="brand-mark">Z</span><span>Z-Store</span></a>
+    <nav class="desktop-nav" aria-label="Navigasi utama">
+      <a href="#products">Belanja</a><a href="#about">Tentang lab</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-focus" aria-label="Cari produk">⌕</button>
+      <button class="cart-button" id="open-cart">Keranjang <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> TOKO SIMULASI • LATIHAN LEGAL</div>
+        <h1>Belanja cerdas.<br><em>Uji dengan aman.</em></h1>
+        <p>Z-Store adalah toko online dummy untuk mempelajari alur e-commerce dan mengaudit keamanan aplikasi web tanpa menyentuh data atau layanan sungguhan.</p>
+        <a class="primary-link" href="#products">Jelajahi produk <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi paket belanja">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-card card-back"><span>z.</span><small>GOOD FINDS<br>ONLY</small></div>
+        <div class="hero-card card-front"><div class="box-ribbon"></div><span class="box-label">Z<br>STORE</span></div>
+        <div class="floating-tag tag-top">DEMO STORE</div>
+        <div class="floating-tag tag-bottom">EST. 2026</div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Informasi demo">
+      <div><strong>100%</strong><span>Produk fiktif</span></div>
+      <div><strong>0</strong><span>Pembayaran nyata</span></div>
+      <div><strong>SAFE</strong><span>Latihan di lab sendiri</span></div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div><div class="eyebrow">PILIHAN MINGGU INI</div><h2>Temukan favoritmu.</h2></div>
+        <label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Cari produk..." autocomplete="off"></label>
+      </div>
+      <div class="filters" id="filters" aria-label="Filter kategori">
+        <button class="filter active" data-category="Semua">Semua</button>
+        <button class="filter" data-category="Teknologi">Teknologi</button>
+        <button class="filter" data-category="Lifestyle">Lifestyle</button>
+        <button class="filter" data-category="Aksesori">Aksesori</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="lab-note" id="about">
+      <div class="lab-icon">⌘</div>
+      <div><div class="eyebrow">CATATAN LAB</div><h3>Ini bukan toko sungguhan.</h3><p>Login, keranjang, dan checkout di versi awal ini hanya simulasi di browser. Jangan gunakan password asli, data pribadi, atau informasi pembayaran. Backend dan autentikasi sungguhan belum dipasang.</p></div>
+      <span class="lab-badge">SANDBOX</span>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">Z</span><span>Z-Store</span></a><span>Built for learning • 2026</span><span>Demo only</span></footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="drawer-head"><div><div class="eyebrow">PESANAN DEMO</div><h2>Keranjangmu</h2></div><button class="close-button" id="close-cart" aria-label="Tutup">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-bottom"><div class="total-line"><span>Total simulasi</span><strong id="cart-total">Rp0</strong></div><button class="checkout-button" id="checkout">Lanjut checkout demo <span>→</span></button><p>Tidak ada pembayaran atau pesanan nyata.</p></div>
+  </aside>
+
+  <dialog id="notice-dialog" class="notice-dialog">
+    <button class="close-button dialog-close" id="close-notice" aria-label="Tutup">×</button>
+    <div class="eyebrow">Z-STORE DEMO</div><h2 id="notice-title">Checkout simulasi</h2>
+    <p id="notice-message">Ini hanya demonstrasi. Tidak ada transaksi yang dibuat.</p>
+    <button class="checkout-button" id="notice-ok">Mengerti</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
